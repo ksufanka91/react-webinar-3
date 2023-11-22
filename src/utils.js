@@ -26,3 +26,19 @@ export function createElement(name, props = {}, ...children) {
 
   return element;
 }
+
+export function morph(number, wordOne, wordTwo, wordFive) {
+  number = Math.abs(number) % 100;
+  const number2 = number % 10;
+
+  if (number > 10 && number < 20) {
+    return wordFive;
+  }
+  if (number2 > 1 && number2 < 5) {
+    return wordTwo;
+  }
+  if (number2 === 1) {
+    return wordOne;
+  }
+  return wordFive;
+}
