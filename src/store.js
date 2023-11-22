@@ -44,7 +44,8 @@ class Store {
   addItem() {
     this.setState({
       ...this.state,
-      list: [...this.state.list, {code: this.state.list.length + 1, title: 'Новая запись'}]
+      listCounter: this.state.listCounter + 1,
+      list: [...this.state.list, {code: this.state.listCounter + 1, title: 'Новая запись'}],
     })
   };
 
