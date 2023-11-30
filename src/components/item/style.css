@@ -1,12 +1,7 @@
 .Item {
   display: flex;
   justify-content: flex-start;
-  transition: background-color 1s;
-}
-
-.Item_selected {
-  background: #75aaf1;
-  color: #fff;
+  align-items: center;
 }
 
 .Item-code {
@@ -14,12 +9,21 @@
 }
 
 .Item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 10px ;
 }
 
 .Item-actions {
   display: flex;
   justify-content: flex-end;
   padding: 20px 20px 20px 10px;
+}
+
+@media (max-width: 430px) {
+  .Item {
+    font-size: 14px;
+  }
 }

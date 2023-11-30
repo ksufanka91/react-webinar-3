@@ -1,5 +1,10 @@
 .Controls {
   display: flex;
   justify-content: flex-end;
+  gap: 20px;
   padding: 20px;
+}
+
+.Highlighted {
+  font-weight: 800;
 }
