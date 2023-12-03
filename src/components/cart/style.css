@@ -1,20 +1,7 @@
-.Cart {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.70);
-  justify-content: center;
-  align-items: center;
-}
-
-.Cart_open {
-  display: flex;
+.Cart-items-wrapper {
+  padding: 71px 0 0;
+  margin-bottom: 130px;
+  overflow: auto;
 }
 
 .Cart_empty {
@@ -25,36 +12,7 @@
   color: #c5c5c5;
 }
 
-.Cart-container {
-  min-width: 960px;
-  border-radius: 10px;
-  background: #FFF;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.50);
-  max-height: 100%;
-  overflow: auto;
-}
-
-.Cart-title-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 23px 20px;
-  background: #F5F5F5;
-}
-
-.Cart-title {
-  font-size: 32px;
-  font-weight: 800;
-}
-
-.Cart-items-wrapper {
-  padding: 71px 0 0;
-  margin-bottom: 130px;
-  overflow: auto;
-}
-
 .Cart-items {
-  display: table;
   width: 100%;
 }
 
@@ -102,7 +60,20 @@
   padding: 0 20px 0 12px;
 }
 
-.Cart-purchase-sum .Cart-item-price {
+.Cart-sum  {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 126px 0 20px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.Cart-sum-text {
+  margin-right: 54px;
+}
+
+.Cart-sum .Cart-item-price {
   font-weight: bold;
 }
 

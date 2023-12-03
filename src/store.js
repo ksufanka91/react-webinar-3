@@ -53,7 +53,7 @@ class Store {
             item.quantity++;
           }
 
-          return item;
+          return {...item};
         })
       })
     } else {

@@ -4,19 +4,27 @@ import './style.css';
 import {priceFormat} from "../../utils";
 import Button from "../UI/button";
 
-function Item({item, onAddItemToCart}) {
+function Item({item, showQuantity = false, onAddItemToCart, onDeleteItem}) {
   return (
     <div className='Item'>
       <div className='Item-code'>{item.code}</div>
       <div className='Item-title'>
         {item.title}
-        <span>{priceFormat(item.price)}</span>
+        <span className="Item-title-price">{priceFormat(item.price)}</span>
+        {showQuantity && <span className={'Item-quantity'}>{item.quantity} шт</span>}
       </div>
 
       <div className='Item-actions'>
-        <Button onClick={() => onAddItemToCart(item.code)}>
-          Добавить
-        </Button>
+        {onAddItemToCart && (
+          <Button onClick={() => onAddItemToCart(item.code)}>
+            Добавить
+          </Button>
+        )}
+        {onDeleteItem && (
+          <Button onClick={() => onDeleteItem(item.code)}>
+            Удалить
+          </Button>
+        )}
       </div>
     </div>
   );
@@ -27,8 +35,10 @@ Item.propTypes = {
     code: PropTypes.number,
     title: PropTypes.string,
     price: PropTypes.number,
+    quantity: PropTypes.number,
   }).isRequired,
   onAddItemToCart: PropTypes.func,
+  onDeleteItem: PropTypes.func,
 };
 
 export default React.memo(Item);

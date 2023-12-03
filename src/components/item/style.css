@@ -5,7 +5,7 @@
 }
 
 .Item-code {
-  padding: 20px 10px 20px 20px;
+  padding: 19px 10px 20px 20px;
 }
 
 .Item-title {
@@ -13,13 +13,27 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 10px ;
+  padding: 19px 10px 20px;
+}
+
+.Item-title span:first-child {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.Item-title-price {
+  font-size: 18px;
+}
+
+.Item-quantity {
+  padding-left: 60px;
+  padding-right: 20px;
 }
 
 .Item-actions {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 20px 20px 10px;
+  padding: 19px 22px 20px 10px;
 }
 
 @media (max-width: 430px) {

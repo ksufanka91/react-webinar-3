@@ -2,9 +2,23 @@
   display: flex;
   justify-content: flex-end;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 21px 20px 20px;
+  font-size: 18px;
+}
+
+.Controls-in-cart {
+  margin-right: 12px;
+}
+
+.Controls-info {
+
 }
 
 .Highlighted {
   font-weight: 800;
+}
+
+.Controls-button {
+  padding-left: 12px;
+  padding-right: 12px;
 }

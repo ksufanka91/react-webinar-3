@@ -4,6 +4,7 @@ import Controls from "./components/controls";
 import Head from "./components/head";
 import PageLayout from "./components/page-layout";
 import Cart from "./components/cart";
+import Modal from "./components/modal";
 
 /**
  * Приложение
@@ -31,20 +32,23 @@ function App({store}) {
     }, [store]),
   }
 
+  // console.log(cartItems)
+
+  // LIST
+  // showQuantity - bool
+  // onAddItemToCart - если указан, то выводишь кнопку Добавить
+  // onDeleteItemToCart - если указан, то выводишь кнопку Удалить
+
   return (
     <PageLayout>
       <Head title="Магазин"/>
       <Controls openCart={callbacks.onOpenCart} cartItems={cartItems}/>
-      <List list={list}
-            onDeleteItem={callbacks.onDeleteItem}
-            onAddItemToCart={callbacks.onAddItemToCart}
-      />
-      <Cart open={openCart}
-            items={cartItems}
-            title="Корзина"
-            onDeleteItem={callbacks.onDeleteItem}
-            onClose={callbacks.onCloseCart}
-      />
+
+      <List list={list} onAddItemToCart={callbacks.onAddItemToCart}/>
+
+      <Modal title="Корзина" open={openCart} onClose={callbacks.onCloseCart}>
+        <Cart items={cartItems} onDeleteItem={callbacks.onDeleteItem}/>
+      </Modal>
     </PageLayout>
   );
 }

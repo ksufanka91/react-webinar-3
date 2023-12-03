@@ -3,29 +3,40 @@ import {morph, priceFormat} from "../../utils";
 import './style.css';
 import PropTypes from 'prop-types';
 import Button from "../UI/button";
+import {cn as bem} from "@bem-react/classname";
 
 function Controls({openCart, cartItems}) {
-  const quantity = cartItems.reduce((quantity, item) => quantity + item.quantity, 0);
+  const cn = bem('Controls');
+  const quantity = cartItems.length;
 
   const price = cartItems.reduce((price, item) => price + (item.price * item.quantity), 0);
 
   return (
-    <div className='Controls'>
-      <span>В корзине:</span>
-      <span className="Highlighted">
+    <div className={cn()}>
+      <div className={cn('info')}>
+        <span className={cn('in-cart')}>В корзине:</span>
+        <span className="Highlighted">
         {cartItems.length === 0
           ? 'пусто'
           : quantity + ' ' + morph(quantity, 'товар', 'товара', 'товаров') + ' / ' + priceFormat(price)
         }
       </span>
+      </div>
 
-      <Button onClick={openCart}>Перейти</Button>
+
+      <Button onClick={openCart} className={cn('button')}>Перейти</Button>
     </div>
   )
 }
 
 Controls.propTypes = {
-  onAdd: PropTypes.func
+  openCart: PropTypes.func,
+  cartItems: PropTypes.arrayOf(PropTypes.shape({
+    code: PropTypes.number,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    quantity: PropTypes.number,
+  })).isRequired,
 };
 
 export default React.memo(Controls);
