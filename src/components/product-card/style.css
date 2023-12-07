@@ -1,0 +1,12 @@
+.ProductCard {
+  padding: 23px 40px;
+  font-size: 18px;
+}
+
+.ProductCard-item {
+  margin-bottom: 20px;
+}
+
+.ProductCard-item_price {
+  font-size: 24px;
+}
